@@ -1,7 +1,11 @@
 #udp服务端
 import socket
 import struct
-ip_port=("localhost",9999)
+WORKER1_IP="10.0.0.1"
+WORKER2_IP="10.0.0.2"
+SERVER_IP="10.0.0.3"
+SML_PORT=8888
+ip_port=(SERVER_IP,SML_PORT)
 buffer_size=1024
 udp_server=socket.socket(socket.AF_INET,socket.SOCK_DGRAM) #数据报
 udp_server.bind(ip_port)
