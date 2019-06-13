@@ -1,4 +1,5 @@
-/*action ethernet_set_mac_act (smac, dmac) {
+/*
+action ethernet_set_mac_act (smac, dmac) {
     modify_field (ethernet.srcAddr, smac);
     modify_field (ethernet.dstAddr, dmac);
 }
@@ -9,7 +10,8 @@ table ethernet_set_mac {
     actions {
         ethernet_set_mac_act;
     }
-}*/
+}
+*/
 
 
 /*设置对应的源目的ip*/

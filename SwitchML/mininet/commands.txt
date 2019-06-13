@@ -1,32 +1,20 @@
-//table_set_default 用于设置流表的默认动作，需要指定流表名称、默认动作名称以及需要给默认动作传递的执行参数。
-//cache
-
 table_set_default find_index find_index_act
 table_set_default ipv4_route set_output_mcg
 table_set_default update_route do_update
 
-//有关mac ip的部分 之后设置
-//多播部分，建立多播组,egress_rid等
+
 mc_node_create 1 1
 mc_node_create 2 2
-mc_node_create 3 3
 mc_mgrp_create 1
 mc_node_associate 1 1
 mc_node_associate 1 2
-mc_node_associate 1 3
 
-//将对应的rid到源目的ip
-//table_add命令用于为流表添加一条表项，需要指定流表名称、表项执行动作的名称、匹配的字段以及需要给动作传递的执行参数，可以指定该表项的优先级。
-table_add ipv4_route set_output_mcg 10.0.1.1 => 1
+
+table_add ipv4_route set_output_mcg 10.0.0.3 => 1
 table_add update_route do_update 1 => 10.0.0.1 10.0.1.1
 table_add update_route do_update 2 => 10.0.0.2 10.0.1.1
-table_add update_route do_update 3 => 10.0.0.3 10.0.1.1
 
 
-
-
-
-//aggration 的部分
 table_set_default count_add_1 count_add_1_act
 table_set_default vector_add_1_1 vector_add_1_1_act
 table_set_default vector_read_1_1 vector_read_1_1_act
@@ -1563,4 +1551,36 @@ table_set_default vector_read_8_32 vector_read_8_32_act
 table_set_default set_count_to_zero_8 set_count_to_zero_8_act
 table_set_default drop_packet_8 drop_packet_8_act
 
-// find index的部分
+
+table_add find_index find_index_act 0 => 1
+table_add find_index find_index_act 1 => 2
+table_add find_index find_index_act 2 => 3
+table_add find_index find_index_act 3 => 4
+table_add find_index find_index_act 4 => 5
+table_add find_index find_index_act 5 => 6
+table_add find_index find_index_act 6 => 7
+table_add find_index find_index_act 7 => 8
+table_add find_index find_index_act 8 => 9
+table_add find_index find_index_act 9 => 10
+table_add find_index find_index_act 10 => 11
+table_add find_index find_index_act 11 => 12
+table_add find_index find_index_act 12 => 13
+table_add find_index find_index_act 13 => 14
+table_add find_index find_index_act 14 => 15
+table_add find_index find_index_act 15 => 16
+table_add find_index find_index_act 16 => 17
+table_add find_index find_index_act 17 => 18
+table_add find_index find_index_act 18 => 19
+table_add find_index find_index_act 19 => 20
+table_add find_index find_index_act 20 => 21
+table_add find_index find_index_act 21 => 22
+table_add find_index find_index_act 22 => 23
+table_add find_index find_index_act 23 => 24
+table_add find_index find_index_act 24 => 25
+table_add find_index find_index_act 25 => 26
+table_add find_index find_index_act 26 => 27
+table_add find_index find_index_act 27 => 28
+table_add find_index find_index_act 28 => 29
+table_add find_index find_index_act 29 => 30
+table_add find_index find_index_act 30 => 31
+table_add find_index find_index_act 31 => 32
