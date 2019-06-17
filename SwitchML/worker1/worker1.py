@@ -39,64 +39,72 @@ for i in range(0, s):
     p.off = k * i
     if p.off + k <= len(sent_data):
         sent_vector = sent_data[p.off:p.off + k]
-        idx_field = struct.pack("i", p.idx)
+        idx_field = struct.pack(">i", p.idx)
         off_field = struct.pack("i", p.off)
         sent_packet = idx_field + off_field
         for ii in range(len(sent_vector)):
-            sent_vector[ii] = int(sent_vector[ii] * 2 ** 29)
+            sent_vector[ii] = int(sent_vector[ii] * 2 ** 28)
             sent_packet += struct.pack("i", sent_vector[ii])
         print(sent_packet)
         ss.sendto(sent_packet, sent_addr)
-        time.sleep(0.01)
+        print("yes")
+        time.sleep(0.1)
         # print(vector)
     else:
-        idx_field = struct.pack("i", p.idx)
+        idx_field = struct.pack(">i", p.idx)
         off_field = struct.pack("i", p.off)
         sent_packet = idx_field + off_field
         sent_vector = sent_data[p.off:]
         for iii in range(len(sent_vector)):
-            sent_vector[iii] = int(sent_vector[iii] * 2 ** 29)
+            sent_vector[iii] = int(sent_vector[iii] * 2 ** 28)
             sent_packet += struct.pack("i", sent_vector[iii])
         # print(vector)
     print(p.off)
 counter=0
+print("recieve data:")
 while True:
     # 接收数据
+    #print(counter)
     recv_packet,recv_addr=ss.recvfrom(1024)
     counter=counter+1
     recv_data=[]
-    for d in range(0,len(recv_packet),4):
+    p.idx=int(struct.unpack(">i",recv_packet[0:4])[0])
+    for d in range(4,len(recv_packet),4):
         recv_data.append(struct.unpack("i",recv_packet[d:d+4])[0])
-    print(recv_data)
-    p.idx=int(recv_data[0])
-    # p.off=int(recv_packet[1])
-    recv_vector=recv_data[2:]
+    #print(recv_data)
+    #p.idx=int(recv_data[0])
+    p.off=int(recv_packet[0])
+    print("idx={0},offset={1}".format(p.idx,p.off))
+    recv_vector=recv_data[1:]
     for i in range(len(recv_vector)):
-        recv_vector[i]=float(recv_vector[i]/(2**29))
+        recv_vector[i]=float(recv_vector[i]/(2**28))
         # f2.write(str(recv_vector[i])+' ')
     print(recv_vector)
     sent_data[p.off:p.off+k]=recv_vector
     p.off += k*s
     if p.off<len(sent_data) and p.off+k <= len(sent_data):
         sent_vector = sent_data[p.off:p.off + k]
-        idx_field = struct.pack("i", p.idx)
+        idx_field = struct.pack(">i", p.idx)
         off_field = struct.pack("i", p.off)
         sent_packet = idx_field + off_field
         for ii in range(len(sent_vector)):
-            sent_vector[ii] = int(sent_vector[ii] * 2 ** 29)
+            sent_vector[ii] = int(sent_vector[ii] * 2 ** 28)
             sent_packet += struct.pack("i", sent_vector[ii])
+        print("sent again:")
         print(sent_packet)
         ss.sendto(sent_packet, sent_addr)
-        time.sleep(0.01)
-    elif p.off<len(sent_data) and p.off > len(sent_data):
-        idx_field = struct.pack("i", p.idx)
+        time.sleep(0.1)
+    elif p.off<len(sent_data) and p.off+k > len(sent_data):
+        idx_field = struct.pack(">i", p.idx)
         off_field = struct.pack("i", p.off)
         sent_packet = idx_field + off_field
         sent_vector = sent_data[p.off:]
         for iii in range(len(sent_vector)):
-            sent_vector[iii] = int(sent_vector[iii] * 2 ** 29)
+            sent_vector[iii] = int(sent_vector[iii] * 2 ** 28)
             sent_packet += struct.pack("i", sent_vector[iii])
+        ss.sendto(sent_packet, sent_addr)
     if counter == math.ceil(len(sent_data)/k):
+        print("done!")
         break
 
 for list_men in sent_data:
