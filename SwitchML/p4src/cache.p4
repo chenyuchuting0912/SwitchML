@@ -14,11 +14,12 @@ action find_index_act(index) {
 
 table find_index {
     reads {
-        sml_hdr.key: exact;
+        sml_hdr.idx: exact;
     }
     actions {
         find_index_act;
     }
+    size:CACHE_NUM;
 }
 
 control process_cache {

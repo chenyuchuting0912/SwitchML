@@ -17,7 +17,9 @@ table ipv4_route {
 */
 
 
+
 /*多播*/
+
 action set_output_mcg(mcast_group) {
     modify_field(intrinsic_metadata.mcast_grp, mcast_group);
     add_to_field(ipv4.ttl, -1);
@@ -32,3 +34,4 @@ table ipv4_route {
     }
     size : 16384;
 }
+

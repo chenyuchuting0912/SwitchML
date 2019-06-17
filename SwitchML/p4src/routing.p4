@@ -11,11 +11,12 @@ table ethernet_set_mac {
         ethernet_set_mac_act;
     }
 }
+
 */
 
 
 /*设置对应的源目的ip*/
-
+/*
 action do_update(dst_ip,src_ip) {
       modify_field(ipv4.dstAddr,dst_ip);
       modify_field(ipv4.srcAddr,src_ip);
@@ -33,3 +34,36 @@ table update_route {
     }
     size : 16384;
 }
+*/
+
+action do_update(dst_ip,src_ip,dmac,smac) {
+
+      modify_field(ipv4.dstAddr,dst_ip);
+
+      modify_field(ipv4.srcAddr,src_ip);
+      modify_field(ethernet.dstAddr,dmac);
+      modify_field(ethernet.srcAddr,smac);
+
+      add_to_field(ipv4.ttl, -1);
+}
+
+
+
+table update_route {
+
+    reads {
+
+        intrinsic_metadata.egress_rid : exact;
+    }
+
+    actions {
+
+        do_update;
+    }
+
+    size : 16384;
+
+}
+
+
+

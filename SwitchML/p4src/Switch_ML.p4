@@ -18,6 +18,9 @@ control ingress {
 }
 
 control egress {
+    if(meta_count.count_value<2){
+     apply(drop_packet);
+}
 
     apply (update_route);
 }

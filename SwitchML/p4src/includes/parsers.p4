@@ -42,5 +42,8 @@ parser parse_sml_hdr{
 } 
 
 parser parse_vector {
-    return parse_sml_vector_1;
+    extract (sml_vector);
+    return ingress;
 }
+
+

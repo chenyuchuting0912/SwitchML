@@ -56,52 +56,47 @@ header udp_t udp;
 /* idx与off的值是暂时定为这么多，真正的需要等到找到数据集之后再看*/
 header_type sml_hdr_t{
     fields{
-        idx : 10;
-        off : 16;
+        idx : 32;
+        off : 32;
     }
 }
 
 header sml_hdr_t sml_hdr;
 
-/*vector 数据的部分*，这里在aggregation中定义了，稍后看看是否需要修改*/
-/*这一部分似乎是没用的， 在netcache是用来计数的。
-header_type sml_load_t{
-    fields{
-    load_1: 32;
-    load_2: 32;
-    load_3: 32;
-    load_4: 32;
-    load_5: 32;
-    load_6: 32;
-    load_7: 32;
-    load_8: 32;
-    load_9: 32;
-    load_10: 32;
-    load_11: 32;
-    load_12: 32;
-    load_13: 32;
-    load_14: 32;
-    load_15: 32;
-    load_16: 32;
-    load_17: 32;
-    load_18: 32;
-    load_19: 32;
-    load_20: 32;
-    load_21: 32;
-    load_22: 32;
-    load_23: 32;
-    load_24: 32;
-    load_25: 32;
-    load_26: 32;
-    load_27: 32;
-    load_28: 32;
-    load_29: 32;
-    load_30: 32;
-    load_31: 32;
-    load_32: 32;
-
-
-    }
-}
-header sml_load_t sml_load;
-*/
+header_type sml_vector_t { 
+    fields { 
+        vector_1: 32; 
+        vector_2: 32; 
+        vector_3: 32; 
+        vector_4: 32; 
+        vector_5: 32; 
+        vector_6: 32; 
+        vector_7: 32; 
+        vector_8: 32; 
+        vector_9: 32; 
+        vector_10: 32; 
+        vector_11: 32; 
+        vector_12: 32; 
+        vector_13: 32; 
+        vector_14: 32; 
+        vector_15: 32; 
+        vector_16: 32; 
+        vector_17: 32; 
+        vector_18: 32; 
+        vector_19: 32; 
+        vector_20: 32; 
+        vector_21: 32; 
+        vector_22: 32; 
+        vector_23: 32; 
+        vector_24: 32; 
+        vector_25: 32; 
+        vector_26: 32; 
+        vector_27: 32; 
+        vector_28: 32; 
+        vector_29: 32; 
+        vector_30: 32; 
+        vector_31: 32; 
+        vector_32: 32; 
+    } 
+} 
+header sml_vector_t sml_vector;
