@@ -1,3 +1,4 @@
+#coding=utf-8
 #!/usr/bin/python
 
 # Copyright 2013-present Barefoot Networks, Inc. 

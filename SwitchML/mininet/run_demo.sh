@@ -24,10 +24,10 @@ SWITCH_PATH=$BMV2_PATH/targets/simple_switch/simple_switch
 #CLI_PATH=$BMV2_PATH/tools/runtime_CLI.py
 CLI_PATH=$BMV2_PATH/targets/simple_switch/sswitch_CLI
 
-$P4C_BM_SCRIPT ../p4src/aggregation.p4 --json aggregation.json
+$P4C_BM_SCRIPT ../p4src/Switch_ML.p4 --json Switch_ML.json
 # This gives libtool the opportunity to "warm-up"
 sudo $SWITCH_PATH >/dev/null 2>&1
 sudo PYTHONPATH=$PYTHONPATH:$BMV2_PATH/mininet/ python topo.py \
     --behavioral-exe $SWITCH_PATH \
-    --json aggregation.json \
+    --json Switch_ML.json \
     --cli $CLI_PATH
