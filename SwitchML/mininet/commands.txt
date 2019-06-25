@@ -1,16 +1,13 @@
-table_set_default ipv4_route set_output_mcg
-
-
-mc_node_create 1 1
-mc_node_create 2 2
+mc_node_create 0 1
+mc_node_create 1 2
 mc_mgrp_create 1
+mc_node_associate 1 0
 mc_node_associate 1 1
-mc_node_associate 1 2
 
 
 table_add ipv4_route set_output_mcg 10.0.0.3 => 1
-table_add update_route do_update 1 => 10.0.0.1 10.0.1.1 aa:bb:cc:dd:ee:01 aa:bb:cc:dd:ee:11
-table_add update_route do_update 2 => 10.0.0.2 10.0.1.1 aa:bb:cc:dd:ee:02 aa:bb:cc:dd:ee:12
+table_add update_route do_update 0 => 10.0.0.1 10.0.1.1 aa:bb:cc:dd:ee:01 aa:bb:cc:dd:ee:11
+table_add update_route do_update 1 => 10.0.0.2 10.0.1.1 aa:bb:cc:dd:ee:02 aa:bb:cc:dd:ee:12
 
 table_set_default count_add count_add_act
 table_set_default set_count_to_zero set_count_to_zero_act 
