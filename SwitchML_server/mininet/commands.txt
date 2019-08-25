@@ -1,0 +1,6 @@
+table_add ipv4_route set_egress 10.0.0.1 => 1
+table_add ipv4_route set_egress 10.0.0.2 => 2
+table_add ipv4_route set_egress 10.0.0.3 => 3
+table_add ethernet_set_mac ethernet_set_mac_act 1 => aa:bb:cc:dd:ee:11 aa:bb:cc:dd:ee:01
+table_add ethernet_set_mac ethernet_set_mac_act 2 => aa:bb:cc:dd:ee:12 aa:bb:cc:dd:ee:02
+table_add ethernet_set_mac ethernet_set_mac_act 3 => aa:bb:cc:dd:ee:13 aa:bb:cc:dd:ee:03
