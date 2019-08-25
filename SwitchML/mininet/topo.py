@@ -56,10 +56,14 @@ class MyTopo(Topo):
                                     device_id = i)
         
         for h in range(nb_hosts):
-            host = self.addHost('h%d' % (h + 1))
+            #host = self.addHost('h%d' % (h + 1),cpu=.5/nb_hosts)
+            host=self.addHost('h%d' % (h + 1))
 
         for a, b in links:
-            self.addLink(a, b)
+            #linkopt={'bw':10,'delay':'5ms','loss':0,'max_queue_size':1000}
+            #self.addLink(a, b, cls=TCLink, **linkopt)
+            #self.addLink(a, b, bw=10, delay='5ms', loss=0, max_queue_size=1000, use_htb=True)
+            self.addLink(a,b)
 
 def read_topo():
     nb_hosts = 0
@@ -87,6 +91,7 @@ def main():
                   nb_hosts, nb_switches, links)
 
     net = Mininet(topo = topo,
+                  #link=TCLink,
                   host = P4Host,
                   switch = P4Switch,
                   controller = None,

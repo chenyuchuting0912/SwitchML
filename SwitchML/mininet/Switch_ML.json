@@ -356,19 +356,15 @@
             "id": 7,
             "fields": [
                 [
-                    "ingress_global_timestamp",
-                    48
-                ],
-                [
-                    "lf_field_list",
-                    32
-                ],
-                [
                     "mcast_grp",
-                    16
+                    4
                 ],
                 [
                     "egress_rid",
+                    4
+                ],
+                [
+                    "mcast_hash",
                     16
                 ]
             ],
@@ -838,7 +834,7 @@
     "meter_arrays": [],
     "actions": [
         {
-            "name": "vector_read_6_act",
+            "name": "vector_read_13_act",
             "id": 0,
             "runtime_data": [],
             "primitives": [
@@ -849,12 +845,12 @@
                             "type": "field",
                             "value": [
                                 "sml_vector",
-                                "vector_6"
+                                "vector_13"
                             ]
                         },
                         {
                             "type": "register_array",
-                            "value": "vector_6_reg"
+                            "value": "vector_13_reg"
                         },
                         {
                             "type": "field",
@@ -870,7 +866,7 @@
                     "parameters": [
                         {
                             "type": "register_array",
-                            "value": "vector_6_reg"
+                            "value": "vector_13_reg"
                         },
                         {
                             "type": "field",
@@ -882,205 +878,6 @@
                         {
                             "type": "hexstr",
                             "value": "0x0"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "set_count_to_zero_act",
-            "id": 1,
-            "runtime_data": [],
-            "primitives": [
-                {
-                    "op": "register_write",
-                    "parameters": [
-                        {
-                            "type": "register_array",
-                            "value": "count_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        },
-                        {
-                            "type": "hexstr",
-                            "value": "0x0"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "vector_read_24_act",
-            "id": 2,
-            "runtime_data": [],
-            "primitives": [
-                {
-                    "op": "register_read",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector",
-                                "vector_24"
-                            ]
-                        },
-                        {
-                            "type": "register_array",
-                            "value": "vector_24_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "register_write",
-                    "parameters": [
-                        {
-                            "type": "register_array",
-                            "value": "vector_24_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        },
-                        {
-                            "type": "hexstr",
-                            "value": "0x0"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "vector_read_14_act",
-            "id": 3,
-            "runtime_data": [],
-            "primitives": [
-                {
-                    "op": "register_read",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector",
-                                "vector_14"
-                            ]
-                        },
-                        {
-                            "type": "register_array",
-                            "value": "vector_14_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "register_write",
-                    "parameters": [
-                        {
-                            "type": "register_array",
-                            "value": "vector_14_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        },
-                        {
-                            "type": "hexstr",
-                            "value": "0x0"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "vector_add_21_act",
-            "id": 4,
-            "runtime_data": [],
-            "primitives": [
-                {
-                    "op": "register_read",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector_meta",
-                                "meta_vector_21"
-                            ]
-                        },
-                        {
-                            "type": "register_array",
-                            "value": "vector_21_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "add_to_field",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector_meta",
-                                "meta_vector_21"
-                            ]
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector",
-                                "vector_21"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "register_write",
-                    "parameters": [
-                        {
-                            "type": "register_array",
-                            "value": "vector_21_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector_meta",
-                                "meta_vector_21"
-                            ]
                         }
                     ]
                 }
@@ -1088,7 +885,7 @@
         },
         {
             "name": "vector_read_8_act",
-            "id": 5,
+            "id": 1,
             "runtime_data": [],
             "primitives": [
                 {
@@ -1137,8 +934,102 @@
             ]
         },
         {
+            "name": "vector_read_21_act",
+            "id": 2,
+            "runtime_data": [],
+            "primitives": [
+                {
+                    "op": "register_read",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector",
+                                "vector_21"
+                            ]
+                        },
+                        {
+                            "type": "register_array",
+                            "value": "vector_21_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "op": "register_write",
+                    "parameters": [
+                        {
+                            "type": "register_array",
+                            "value": "vector_21_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        },
+                        {
+                            "type": "hexstr",
+                            "value": "0x0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "set_output_mcg",
+            "id": 3,
+            "runtime_data": [
+                {
+                    "name": "mcast_group",
+                    "bitwidth": 4
+                }
+            ],
+            "primitives": [
+                {
+                    "op": "modify_field",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "intrinsic_metadata",
+                                "mcast_grp"
+                            ]
+                        },
+                        {
+                            "type": "runtime_data",
+                            "value": 0
+                        }
+                    ]
+                },
+                {
+                    "op": "add_to_field",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "ipv4",
+                                "ttl"
+                            ]
+                        },
+                        {
+                            "type": "hexstr",
+                            "value": "-0x1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": "vector_add_1_act",
-            "id": 6,
+            "id": 4,
             "runtime_data": [],
             "primitives": [
                 {
@@ -1209,8 +1100,8 @@
             ]
         },
         {
-            "name": "vector_add_26_act",
-            "id": 7,
+            "name": "vector_read_14_act",
+            "id": 5,
             "runtime_data": [],
             "primitives": [
                 {
@@ -1219,38 +1110,19 @@
                         {
                             "type": "field",
                             "value": [
-                                "sml_vector_meta",
-                                "meta_vector_26"
+                                "sml_vector",
+                                "vector_14"
                             ]
                         },
                         {
                             "type": "register_array",
-                            "value": "vector_26_reg"
+                            "value": "vector_14_reg"
                         },
                         {
                             "type": "field",
                             "value": [
                                 "location",
                                 "index"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "add_to_field",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector_meta",
-                                "meta_vector_26"
-                            ]
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector",
-                                "vector_26"
                             ]
                         }
                     ]
@@ -1260,7 +1132,7 @@
                     "parameters": [
                         {
                             "type": "register_array",
-                            "value": "vector_26_reg"
+                            "value": "vector_14_reg"
                         },
                         {
                             "type": "field",
@@ -1270,11 +1142,8 @@
                             ]
                         },
                         {
-                            "type": "field",
-                            "value": [
-                                "sml_vector_meta",
-                                "meta_vector_26"
-                            ]
+                            "type": "hexstr",
+                            "value": "0x0"
                         }
                     ]
                 }
@@ -1282,7 +1151,7 @@
         },
         {
             "name": "vector_add_2_act",
-            "id": 8,
+            "id": 6,
             "runtime_data": [],
             "primitives": [
                 {
@@ -1353,58 +1222,8 @@
             ]
         },
         {
-            "name": "vector_read_23_act",
-            "id": 9,
-            "runtime_data": [],
-            "primitives": [
-                {
-                    "op": "register_read",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector",
-                                "vector_23"
-                            ]
-                        },
-                        {
-                            "type": "register_array",
-                            "value": "vector_23_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "register_write",
-                    "parameters": [
-                        {
-                            "type": "register_array",
-                            "value": "vector_23_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        },
-                        {
-                            "type": "hexstr",
-                            "value": "0x0"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "name": "vector_read_30_act",
-            "id": 10,
+            "id": 7,
             "runtime_data": [],
             "primitives": [
                 {
@@ -1453,8 +1272,58 @@
             ]
         },
         {
+            "name": "vector_read_7_act",
+            "id": 8,
+            "runtime_data": [],
+            "primitives": [
+                {
+                    "op": "register_read",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector",
+                                "vector_7"
+                            ]
+                        },
+                        {
+                            "type": "register_array",
+                            "value": "vector_7_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "op": "register_write",
+                    "parameters": [
+                        {
+                            "type": "register_array",
+                            "value": "vector_7_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        },
+                        {
+                            "type": "hexstr",
+                            "value": "0x0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": "vector_add_3_act",
-            "id": 11,
+            "id": 9,
             "runtime_data": [],
             "primitives": [
                 {
@@ -1525,8 +1394,8 @@
             ]
         },
         {
-            "name": "vector_read_27_act",
-            "id": 12,
+            "name": "vector_add_27_act",
+            "id": 10,
             "runtime_data": [],
             "primitives": [
                 {
@@ -1535,8 +1404,8 @@
                         {
                             "type": "field",
                             "value": [
-                                "sml_vector",
-                                "vector_27"
+                                "sml_vector_meta",
+                                "meta_vector_27"
                             ]
                         },
                         {
@@ -1548,6 +1417,25 @@
                             "value": [
                                 "location",
                                 "index"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "op": "add_to_field",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector_meta",
+                                "meta_vector_27"
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector",
+                                "vector_27"
                             ]
                         }
                     ]
@@ -1567,6 +1455,59 @@
                             ]
                         },
                         {
+                            "type": "field",
+                            "value": [
+                                "sml_vector_meta",
+                                "meta_vector_27"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "vector_read_12_act",
+            "id": 11,
+            "runtime_data": [],
+            "primitives": [
+                {
+                    "op": "register_read",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector",
+                                "vector_12"
+                            ]
+                        },
+                        {
+                            "type": "register_array",
+                            "value": "vector_12_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "op": "register_write",
+                    "parameters": [
+                        {
+                            "type": "register_array",
+                            "value": "vector_12_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        },
+                        {
                             "type": "hexstr",
                             "value": "0x0"
                         }
@@ -1576,7 +1517,7 @@
         },
         {
             "name": "vector_add_4_act",
-            "id": 13,
+            "id": 12,
             "runtime_data": [],
             "primitives": [
                 {
@@ -1641,6 +1582,56 @@
                                 "sml_vector_meta",
                                 "meta_vector_4"
                             ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "vector_read_20_act",
+            "id": 13,
+            "runtime_data": [],
+            "primitives": [
+                {
+                    "op": "register_read",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector",
+                                "vector_20"
+                            ]
+                        },
+                        {
+                            "type": "register_array",
+                            "value": "vector_20_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "op": "register_write",
+                    "parameters": [
+                        {
+                            "type": "register_array",
+                            "value": "vector_20_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        },
+                        {
+                            "type": "hexstr",
+                            "value": "0x0"
                         }
                     ]
                 }
@@ -1719,7 +1710,7 @@
             ]
         },
         {
-            "name": "vector_add_29_act",
+            "name": "vector_read_28_act",
             "id": 15,
             "runtime_data": [],
             "primitives": [
@@ -1729,38 +1720,19 @@
                         {
                             "type": "field",
                             "value": [
-                                "sml_vector_meta",
-                                "meta_vector_29"
+                                "sml_vector",
+                                "vector_28"
                             ]
                         },
                         {
                             "type": "register_array",
-                            "value": "vector_29_reg"
+                            "value": "vector_28_reg"
                         },
                         {
                             "type": "field",
                             "value": [
                                 "location",
                                 "index"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "add_to_field",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector_meta",
-                                "meta_vector_29"
-                            ]
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector",
-                                "vector_29"
                             ]
                         }
                     ]
@@ -1770,7 +1742,7 @@
                     "parameters": [
                         {
                             "type": "register_array",
-                            "value": "vector_29_reg"
+                            "value": "vector_28_reg"
                         },
                         {
                             "type": "field",
@@ -1780,11 +1752,8 @@
                             ]
                         },
                         {
-                            "type": "field",
-                            "value": [
-                                "sml_vector_meta",
-                                "meta_vector_29"
-                            ]
+                            "type": "hexstr",
+                            "value": "0x0"
                         }
                     ]
                 }
@@ -1863,7 +1832,7 @@
             ]
         },
         {
-            "name": "vector_read_22_act",
+            "name": "vector_add_32_act",
             "id": 17,
             "runtime_data": [],
             "primitives": [
@@ -1873,13 +1842,13 @@
                         {
                             "type": "field",
                             "value": [
-                                "sml_vector",
-                                "vector_22"
+                                "sml_vector_meta",
+                                "meta_vector_32"
                             ]
                         },
                         {
                             "type": "register_array",
-                            "value": "vector_22_reg"
+                            "value": "vector_32_reg"
                         },
                         {
                             "type": "field",
@@ -1891,11 +1860,30 @@
                     ]
                 },
                 {
+                    "op": "add_to_field",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector_meta",
+                                "meta_vector_32"
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector",
+                                "vector_32"
+                            ]
+                        }
+                    ]
+                },
+                {
                     "op": "register_write",
                     "parameters": [
                         {
                             "type": "register_array",
-                            "value": "vector_22_reg"
+                            "value": "vector_32_reg"
                         },
                         {
                             "type": "field",
@@ -1905,8 +1893,11 @@
                             ]
                         },
                         {
-                            "type": "hexstr",
-                            "value": "0x0"
+                            "type": "field",
+                            "value": [
+                                "sml_vector_meta",
+                                "meta_vector_32"
+                            ]
                         }
                     ]
                 }
@@ -1985,7 +1976,7 @@
             ]
         },
         {
-            "name": "vector_read_2_act",
+            "name": "vector_add_22_act",
             "id": 19,
             "runtime_data": [],
             "primitives": [
@@ -1995,13 +1986,85 @@
                         {
                             "type": "field",
                             "value": [
-                                "sml_vector",
-                                "vector_2"
+                                "sml_vector_meta",
+                                "meta_vector_22"
                             ]
                         },
                         {
                             "type": "register_array",
-                            "value": "vector_2_reg"
+                            "value": "vector_22_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "op": "add_to_field",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector_meta",
+                                "meta_vector_22"
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector",
+                                "vector_22"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "op": "register_write",
+                    "parameters": [
+                        {
+                            "type": "register_array",
+                            "value": "vector_22_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector_meta",
+                                "meta_vector_22"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "vector_read_11_act",
+            "id": 20,
+            "runtime_data": [],
+            "primitives": [
+                {
+                    "op": "register_read",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector",
+                                "vector_11"
+                            ]
+                        },
+                        {
+                            "type": "register_array",
+                            "value": "vector_11_reg"
                         },
                         {
                             "type": "field",
@@ -2017,7 +2080,7 @@
                     "parameters": [
                         {
                             "type": "register_array",
-                            "value": "vector_2_reg"
+                            "value": "vector_11_reg"
                         },
                         {
                             "type": "field",
@@ -2036,7 +2099,7 @@
         },
         {
             "name": "vector_add_8_act",
-            "id": 20,
+            "id": 21,
             "runtime_data": [],
             "primitives": [
                 {
@@ -2107,8 +2170,8 @@
             ]
         },
         {
-            "name": "vector_read_3_act",
-            "id": 21,
+            "name": "vector_read_19_act",
+            "id": 22,
             "runtime_data": [],
             "primitives": [
                 {
@@ -2118,12 +2181,12 @@
                             "type": "field",
                             "value": [
                                 "sml_vector",
-                                "vector_3"
+                                "vector_19"
                             ]
                         },
                         {
                             "type": "register_array",
-                            "value": "vector_3_reg"
+                            "value": "vector_19_reg"
                         },
                         {
                             "type": "field",
@@ -2139,7 +2202,7 @@
                     "parameters": [
                         {
                             "type": "register_array",
-                            "value": "vector_3_reg"
+                            "value": "vector_19_reg"
                         },
                         {
                             "type": "field",
@@ -2158,7 +2221,7 @@
         },
         {
             "name": "vector_add_9_act",
-            "id": 22,
+            "id": 23,
             "runtime_data": [],
             "primitives": [
                 {
@@ -2222,78 +2285,6 @@
                             "value": [
                                 "sml_vector_meta",
                                 "meta_vector_9"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "vector_add_24_act",
-            "id": 23,
-            "runtime_data": [],
-            "primitives": [
-                {
-                    "op": "register_read",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector_meta",
-                                "meta_vector_24"
-                            ]
-                        },
-                        {
-                            "type": "register_array",
-                            "value": "vector_24_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "add_to_field",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector_meta",
-                                "meta_vector_24"
-                            ]
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector",
-                                "vector_24"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "register_write",
-                    "parameters": [
-                        {
-                            "type": "register_array",
-                            "value": "vector_24_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector_meta",
-                                "meta_vector_24"
                             ]
                         }
                     ]
@@ -2373,7 +2364,7 @@
             ]
         },
         {
-            "name": "vector_read_21_act",
+            "name": "vector_add_31_act",
             "id": 25,
             "runtime_data": [],
             "primitives": [
@@ -2383,13 +2374,13 @@
                         {
                             "type": "field",
                             "value": [
-                                "sml_vector",
-                                "vector_21"
+                                "sml_vector_meta",
+                                "meta_vector_31"
                             ]
                         },
                         {
                             "type": "register_array",
-                            "value": "vector_21_reg"
+                            "value": "vector_31_reg"
                         },
                         {
                             "type": "field",
@@ -2401,11 +2392,30 @@
                     ]
                 },
                 {
+                    "op": "add_to_field",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector_meta",
+                                "meta_vector_31"
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector",
+                                "vector_31"
+                            ]
+                        }
+                    ]
+                },
+                {
                     "op": "register_write",
                     "parameters": [
                         {
                             "type": "register_array",
-                            "value": "vector_21_reg"
+                            "value": "vector_31_reg"
                         },
                         {
                             "type": "field",
@@ -2415,15 +2425,18 @@
                             ]
                         },
                         {
-                            "type": "hexstr",
-                            "value": "0x0"
+                            "type": "field",
+                            "value": [
+                                "sml_vector_meta",
+                                "meta_vector_31"
+                            ]
                         }
                     ]
                 }
             ]
         },
         {
-            "name": "vector_read_15_act",
+            "name": "vector_read_3_act",
             "id": 26,
             "runtime_data": [],
             "primitives": [
@@ -2434,12 +2447,12 @@
                             "type": "field",
                             "value": [
                                 "sml_vector",
-                                "vector_15"
+                                "vector_3"
                             ]
                         },
                         {
                             "type": "register_array",
-                            "value": "vector_15_reg"
+                            "value": "vector_3_reg"
                         },
                         {
                             "type": "field",
@@ -2455,7 +2468,7 @@
                     "parameters": [
                         {
                             "type": "register_array",
-                            "value": "vector_15_reg"
+                            "value": "vector_3_reg"
                         },
                         {
                             "type": "field",
@@ -2545,7 +2558,7 @@
             ]
         },
         {
-            "name": "vector_read_25_act",
+            "name": "vector_add_25_act",
             "id": 28,
             "runtime_data": [],
             "primitives": [
@@ -2555,8 +2568,8 @@
                         {
                             "type": "field",
                             "value": [
-                                "sml_vector",
-                                "vector_25"
+                                "sml_vector_meta",
+                                "meta_vector_25"
                             ]
                         },
                         {
@@ -2568,6 +2581,25 @@
                             "value": [
                                 "location",
                                 "index"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "op": "add_to_field",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector_meta",
+                                "meta_vector_25"
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector",
+                                "vector_25"
                             ]
                         }
                     ]
@@ -2587,6 +2619,59 @@
                             ]
                         },
                         {
+                            "type": "field",
+                            "value": [
+                                "sml_vector_meta",
+                                "meta_vector_25"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "vector_read_9_act",
+            "id": 29,
+            "runtime_data": [],
+            "primitives": [
+                {
+                    "op": "register_read",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector",
+                                "vector_9"
+                            ]
+                        },
+                        {
+                            "type": "register_array",
+                            "value": "vector_9_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "op": "register_write",
+                    "parameters": [
+                        {
+                            "type": "register_array",
+                            "value": "vector_9_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        },
+                        {
                             "type": "hexstr",
                             "value": "0x0"
                         }
@@ -2596,7 +2681,7 @@
         },
         {
             "name": "vector_read_31_act",
-            "id": 29,
+            "id": 30,
             "runtime_data": [],
             "primitives": [
                 {
@@ -2645,79 +2730,7 @@
             ]
         },
         {
-            "name": "vector_add_12_act",
-            "id": 30,
-            "runtime_data": [],
-            "primitives": [
-                {
-                    "op": "register_read",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector_meta",
-                                "meta_vector_12"
-                            ]
-                        },
-                        {
-                            "type": "register_array",
-                            "value": "vector_12_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "add_to_field",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector_meta",
-                                "meta_vector_12"
-                            ]
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector",
-                                "vector_12"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "register_write",
-                    "parameters": [
-                        {
-                            "type": "register_array",
-                            "value": "vector_12_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector_meta",
-                                "meta_vector_12"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "vector_read_5_act",
+            "name": "vector_read_18_act",
             "id": 31,
             "runtime_data": [],
             "primitives": [
@@ -2728,12 +2741,12 @@
                             "type": "field",
                             "value": [
                                 "sml_vector",
-                                "vector_5"
+                                "vector_18"
                             ]
                         },
                         {
                             "type": "register_array",
-                            "value": "vector_5_reg"
+                            "value": "vector_18_reg"
                         },
                         {
                             "type": "field",
@@ -2749,7 +2762,7 @@
                     "parameters": [
                         {
                             "type": "register_array",
-                            "value": "vector_5_reg"
+                            "value": "vector_18_reg"
                         },
                         {
                             "type": "field",
@@ -2767,7 +2780,7 @@
             ]
         },
         {
-            "name": "vector_add_27_act",
+            "name": "vector_read_26_act",
             "id": 32,
             "runtime_data": [],
             "primitives": [
@@ -2777,13 +2790,63 @@
                         {
                             "type": "field",
                             "value": [
-                                "sml_vector_meta",
-                                "meta_vector_27"
+                                "sml_vector",
+                                "vector_26"
                             ]
                         },
                         {
                             "type": "register_array",
-                            "value": "vector_27_reg"
+                            "value": "vector_26_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "op": "register_write",
+                    "parameters": [
+                        {
+                            "type": "register_array",
+                            "value": "vector_26_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        },
+                        {
+                            "type": "hexstr",
+                            "value": "0x0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "vector_add_12_act",
+            "id": 33,
+            "runtime_data": [],
+            "primitives": [
+                {
+                    "op": "register_read",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector_meta",
+                                "meta_vector_12"
+                            ]
+                        },
+                        {
+                            "type": "register_array",
+                            "value": "vector_12_reg"
                         },
                         {
                             "type": "field",
@@ -2801,14 +2864,14 @@
                             "type": "field",
                             "value": [
                                 "sml_vector_meta",
-                                "meta_vector_27"
+                                "meta_vector_12"
                             ]
                         },
                         {
                             "type": "field",
                             "value": [
                                 "sml_vector",
-                                "vector_27"
+                                "vector_12"
                             ]
                         }
                     ]
@@ -2818,7 +2881,7 @@
                     "parameters": [
                         {
                             "type": "register_array",
-                            "value": "vector_27_reg"
+                            "value": "vector_12_reg"
                         },
                         {
                             "type": "field",
@@ -2831,7 +2894,7 @@
                             "type": "field",
                             "value": [
                                 "sml_vector_meta",
-                                "meta_vector_27"
+                                "meta_vector_12"
                             ]
                         }
                     ]
@@ -2839,8 +2902,8 @@
             ]
         },
         {
-            "name": "vector_read_12_act",
-            "id": 33,
+            "name": "vector_read_10_act",
+            "id": 34,
             "runtime_data": [],
             "primitives": [
                 {
@@ -2850,12 +2913,12 @@
                             "type": "field",
                             "value": [
                                 "sml_vector",
-                                "vector_12"
+                                "vector_10"
                             ]
                         },
                         {
                             "type": "register_array",
-                            "value": "vector_12_reg"
+                            "value": "vector_10_reg"
                         },
                         {
                             "type": "field",
@@ -2871,7 +2934,7 @@
                     "parameters": [
                         {
                             "type": "register_array",
-                            "value": "vector_12_reg"
+                            "value": "vector_10_reg"
                         },
                         {
                             "type": "field",
@@ -2889,8 +2952,36 @@
             ]
         },
         {
+            "name": "find_index_act",
+            "id": 35,
+            "runtime_data": [
+                {
+                    "name": "index",
+                    "bitwidth": 16
+                }
+            ],
+            "primitives": [
+                {
+                    "op": "modify_field",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        },
+                        {
+                            "type": "runtime_data",
+                            "value": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": "vector_read_32_act",
-            "id": 34,
+            "id": 36,
             "runtime_data": [],
             "primitives": [
                 {
@@ -2939,8 +3030,8 @@
             ]
         },
         {
-            "name": "vector_read_20_act",
-            "id": 35,
+            "name": "vector_add_30_act",
+            "id": 37,
             "runtime_data": [],
             "primitives": [
                 {
@@ -2949,13 +3040,13 @@
                         {
                             "type": "field",
                             "value": [
-                                "sml_vector",
-                                "vector_20"
+                                "sml_vector_meta",
+                                "meta_vector_30"
                             ]
                         },
                         {
                             "type": "register_array",
-                            "value": "vector_20_reg"
+                            "value": "vector_30_reg"
                         },
                         {
                             "type": "field",
@@ -2963,54 +3054,6 @@
                                 "location",
                                 "index"
                             ]
-                        }
-                    ]
-                },
-                {
-                    "op": "register_write",
-                    "parameters": [
-                        {
-                            "type": "register_array",
-                            "value": "vector_20_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        },
-                        {
-                            "type": "hexstr",
-                            "value": "0x0"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "set_output_mcg",
-            "id": 36,
-            "runtime_data": [
-                {
-                    "name": "mcast_group",
-                    "bitwidth": 16
-                }
-            ],
-            "primitives": [
-                {
-                    "op": "modify_field",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "intrinsic_metadata",
-                                "mcast_grp"
-                            ]
-                        },
-                        {
-                            "type": "runtime_data",
-                            "value": 0
                         }
                     ]
                 },
@@ -3020,31 +3063,26 @@
                         {
                             "type": "field",
                             "value": [
-                                "ipv4",
-                                "ttl"
+                                "sml_vector_meta",
+                                "meta_vector_30"
                             ]
                         },
                         {
-                            "type": "hexstr",
-                            "value": "-0x1"
+                            "type": "field",
+                            "value": [
+                                "sml_vector",
+                                "vector_30"
+                            ]
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "name": "find_index_act",
-            "id": 37,
-            "runtime_data": [
+                },
                 {
-                    "name": "index",
-                    "bitwidth": 16
-                }
-            ],
-            "primitives": [
-                {
-                    "op": "modify_field",
+                    "op": "register_write",
                     "parameters": [
+                        {
+                            "type": "register_array",
+                            "value": "vector_30_reg"
+                        },
                         {
                             "type": "field",
                             "value": [
@@ -3053,8 +3091,11 @@
                             ]
                         },
                         {
-                            "type": "runtime_data",
-                            "value": 0
+                            "type": "field",
+                            "value": [
+                                "sml_vector_meta",
+                                "meta_vector_30"
+                            ]
                         }
                     ]
                 }
@@ -3133,7 +3174,7 @@
             ]
         },
         {
-            "name": "vector_read_28_act",
+            "name": "vector_add_28_act",
             "id": 39,
             "runtime_data": [],
             "primitives": [
@@ -3143,63 +3184,13 @@
                         {
                             "type": "field",
                             "value": [
-                                "sml_vector",
-                                "vector_28"
-                            ]
-                        },
-                        {
-                            "type": "register_array",
-                            "value": "vector_28_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "register_write",
-                    "parameters": [
-                        {
-                            "type": "register_array",
-                            "value": "vector_28_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        },
-                        {
-                            "type": "hexstr",
-                            "value": "0x0"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "vector_add_32_act",
-            "id": 40,
-            "runtime_data": [],
-            "primitives": [
-                {
-                    "op": "register_read",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
                                 "sml_vector_meta",
-                                "meta_vector_32"
+                                "meta_vector_28"
                             ]
                         },
                         {
                             "type": "register_array",
-                            "value": "vector_32_reg"
+                            "value": "vector_28_reg"
                         },
                         {
                             "type": "field",
@@ -3217,14 +3208,14 @@
                             "type": "field",
                             "value": [
                                 "sml_vector_meta",
-                                "meta_vector_32"
+                                "meta_vector_28"
                             ]
                         },
                         {
                             "type": "field",
                             "value": [
                                 "sml_vector",
-                                "vector_32"
+                                "vector_28"
                             ]
                         }
                     ]
@@ -3234,7 +3225,7 @@
                     "parameters": [
                         {
                             "type": "register_array",
-                            "value": "vector_32_reg"
+                            "value": "vector_28_reg"
                         },
                         {
                             "type": "field",
@@ -3247,7 +3238,7 @@
                             "type": "field",
                             "value": [
                                 "sml_vector_meta",
-                                "meta_vector_32"
+                                "meta_vector_28"
                             ]
                         }
                     ]
@@ -3255,8 +3246,135 @@
             ]
         },
         {
-            "name": "vector_add_14_act",
+            "name": "vector_read_17_act",
+            "id": 40,
+            "runtime_data": [],
+            "primitives": [
+                {
+                    "op": "register_read",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector",
+                                "vector_17"
+                            ]
+                        },
+                        {
+                            "type": "register_array",
+                            "value": "vector_17_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "op": "register_write",
+                    "parameters": [
+                        {
+                            "type": "register_array",
+                            "value": "vector_17_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        },
+                        {
+                            "type": "hexstr",
+                            "value": "0x0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "set_count_to_zero_act",
             "id": 41,
+            "runtime_data": [],
+            "primitives": [
+                {
+                    "op": "register_write",
+                    "parameters": [
+                        {
+                            "type": "register_array",
+                            "value": "count_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        },
+                        {
+                            "type": "hexstr",
+                            "value": "0x0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "vector_read_25_act",
+            "id": 42,
+            "runtime_data": [],
+            "primitives": [
+                {
+                    "op": "register_read",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector",
+                                "vector_25"
+                            ]
+                        },
+                        {
+                            "type": "register_array",
+                            "value": "vector_25_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "op": "register_write",
+                    "parameters": [
+                        {
+                            "type": "register_array",
+                            "value": "vector_25_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        },
+                        {
+                            "type": "hexstr",
+                            "value": "0x0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "vector_add_14_act",
+            "id": 43,
             "runtime_data": [],
             "primitives": [
                 {
@@ -3327,129 +3445,7 @@
             ]
         },
         {
-            "name": "vector_add_22_act",
-            "id": 42,
-            "runtime_data": [],
-            "primitives": [
-                {
-                    "op": "register_read",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector_meta",
-                                "meta_vector_22"
-                            ]
-                        },
-                        {
-                            "type": "register_array",
-                            "value": "vector_22_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "add_to_field",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector_meta",
-                                "meta_vector_22"
-                            ]
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector",
-                                "vector_22"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "register_write",
-                    "parameters": [
-                        {
-                            "type": "register_array",
-                            "value": "vector_22_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector_meta",
-                                "meta_vector_22"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "vector_read_11_act",
-            "id": 43,
-            "runtime_data": [],
-            "primitives": [
-                {
-                    "op": "register_read",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector",
-                                "vector_11"
-                            ]
-                        },
-                        {
-                            "type": "register_array",
-                            "value": "vector_11_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "register_write",
-                    "parameters": [
-                        {
-                            "type": "register_array",
-                            "value": "vector_11_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        },
-                        {
-                            "type": "hexstr",
-                            "value": "0x0"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "vector_read_19_act",
+            "name": "vector_read_29_act",
             "id": 44,
             "runtime_data": [],
             "primitives": [
@@ -3460,12 +3456,12 @@
                             "type": "field",
                             "value": [
                                 "sml_vector",
-                                "vector_19"
+                                "vector_29"
                             ]
                         },
                         {
                             "type": "register_array",
-                            "value": "vector_19_reg"
+                            "value": "vector_29_reg"
                         },
                         {
                             "type": "field",
@@ -3481,57 +3477,7 @@
                     "parameters": [
                         {
                             "type": "register_array",
-                            "value": "vector_19_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        },
-                        {
-                            "type": "hexstr",
-                            "value": "0x0"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "vector_read_13_act",
-            "id": 45,
-            "runtime_data": [],
-            "primitives": [
-                {
-                    "op": "register_read",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector",
-                                "vector_13"
-                            ]
-                        },
-                        {
-                            "type": "register_array",
-                            "value": "vector_13_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "register_write",
-                    "parameters": [
-                        {
-                            "type": "register_array",
-                            "value": "vector_13_reg"
+                            "value": "vector_29_reg"
                         },
                         {
                             "type": "field",
@@ -3550,7 +3496,7 @@
         },
         {
             "name": "vector_add_15_act",
-            "id": 46,
+            "id": 45,
             "runtime_data": [],
             "primitives": [
                 {
@@ -3621,8 +3567,8 @@
             ]
         },
         {
-            "name": "vector_add_31_act",
-            "id": 47,
+            "name": "vector_add_23_act",
+            "id": 46,
             "runtime_data": [],
             "primitives": [
                 {
@@ -3632,12 +3578,12 @@
                             "type": "field",
                             "value": [
                                 "sml_vector_meta",
-                                "meta_vector_31"
+                                "meta_vector_23"
                             ]
                         },
                         {
                             "type": "register_array",
-                            "value": "vector_31_reg"
+                            "value": "vector_23_reg"
                         },
                         {
                             "type": "field",
@@ -3655,14 +3601,14 @@
                             "type": "field",
                             "value": [
                                 "sml_vector_meta",
-                                "meta_vector_31"
+                                "meta_vector_23"
                             ]
                         },
                         {
                             "type": "field",
                             "value": [
                                 "sml_vector",
-                                "vector_31"
+                                "vector_23"
                             ]
                         }
                     ]
@@ -3672,7 +3618,7 @@
                     "parameters": [
                         {
                             "type": "register_array",
-                            "value": "vector_31_reg"
+                            "value": "vector_23_reg"
                         },
                         {
                             "type": "field",
@@ -3685,7 +3631,190 @@
                             "type": "field",
                             "value": [
                                 "sml_vector_meta",
-                                "meta_vector_31"
+                                "meta_vector_23"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "drop_packet_act",
+            "id": 47,
+            "runtime_data": [],
+            "primitives": [
+                {
+                    "op": "drop",
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "vector_read_16_act",
+            "id": 48,
+            "runtime_data": [],
+            "primitives": [
+                {
+                    "op": "register_read",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector",
+                                "vector_16"
+                            ]
+                        },
+                        {
+                            "type": "register_array",
+                            "value": "vector_16_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "op": "register_write",
+                    "parameters": [
+                        {
+                            "type": "register_array",
+                            "value": "vector_16_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        },
+                        {
+                            "type": "hexstr",
+                            "value": "0x0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "vector_read_24_act",
+            "id": 49,
+            "runtime_data": [],
+            "primitives": [
+                {
+                    "op": "register_read",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector",
+                                "vector_24"
+                            ]
+                        },
+                        {
+                            "type": "register_array",
+                            "value": "vector_24_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "op": "register_write",
+                    "parameters": [
+                        {
+                            "type": "register_array",
+                            "value": "vector_24_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        },
+                        {
+                            "type": "hexstr",
+                            "value": "0x0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "vector_add_16_act",
+            "id": 50,
+            "runtime_data": [],
+            "primitives": [
+                {
+                    "op": "register_read",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector_meta",
+                                "meta_vector_16"
+                            ]
+                        },
+                        {
+                            "type": "register_array",
+                            "value": "vector_16_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "op": "add_to_field",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector_meta",
+                                "meta_vector_16"
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector",
+                                "vector_16"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "op": "register_write",
+                    "parameters": [
+                        {
+                            "type": "register_array",
+                            "value": "vector_16_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector_meta",
+                                "meta_vector_16"
                             ]
                         }
                     ]
@@ -3694,7 +3823,7 @@
         },
         {
             "name": "do_update",
-            "id": 48,
+            "id": 51,
             "runtime_data": [
                 {
                     "name": "dst_ip",
@@ -3797,201 +3926,7 @@
             ]
         },
         {
-            "name": "vector_add_16_act",
-            "id": 49,
-            "runtime_data": [],
-            "primitives": [
-                {
-                    "op": "register_read",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector_meta",
-                                "meta_vector_16"
-                            ]
-                        },
-                        {
-                            "type": "register_array",
-                            "value": "vector_16_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "add_to_field",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector_meta",
-                                "meta_vector_16"
-                            ]
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector",
-                                "vector_16"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "register_write",
-                    "parameters": [
-                        {
-                            "type": "register_array",
-                            "value": "vector_16_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector_meta",
-                                "meta_vector_16"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "vector_add_25_act",
-            "id": 50,
-            "runtime_data": [],
-            "primitives": [
-                {
-                    "op": "register_read",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector_meta",
-                                "meta_vector_25"
-                            ]
-                        },
-                        {
-                            "type": "register_array",
-                            "value": "vector_25_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "add_to_field",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector_meta",
-                                "meta_vector_25"
-                            ]
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector",
-                                "vector_25"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "register_write",
-                    "parameters": [
-                        {
-                            "type": "register_array",
-                            "value": "vector_25_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector_meta",
-                                "meta_vector_25"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "vector_read_9_act",
-            "id": 51,
-            "runtime_data": [],
-            "primitives": [
-                {
-                    "op": "register_read",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector",
-                                "vector_9"
-                            ]
-                        },
-                        {
-                            "type": "register_array",
-                            "value": "vector_9_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "register_write",
-                    "parameters": [
-                        {
-                            "type": "register_array",
-                            "value": "vector_9_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        },
-                        {
-                            "type": "hexstr",
-                            "value": "0x0"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "vector_read_18_act",
+            "name": "vector_read_5_act",
             "id": 52,
             "runtime_data": [],
             "primitives": [
@@ -4002,12 +3937,12 @@
                             "type": "field",
                             "value": [
                                 "sml_vector",
-                                "vector_18"
+                                "vector_5"
                             ]
                         },
                         {
                             "type": "register_array",
-                            "value": "vector_18_reg"
+                            "value": "vector_5_reg"
                         },
                         {
                             "type": "field",
@@ -4023,57 +3958,7 @@
                     "parameters": [
                         {
                             "type": "register_array",
-                            "value": "vector_18_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        },
-                        {
-                            "type": "hexstr",
-                            "value": "0x0"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "vector_read_16_act",
-            "id": 53,
-            "runtime_data": [],
-            "primitives": [
-                {
-                    "op": "register_read",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector",
-                                "vector_16"
-                            ]
-                        },
-                        {
-                            "type": "register_array",
-                            "value": "vector_16_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "register_write",
-                    "parameters": [
-                        {
-                            "type": "register_array",
-                            "value": "vector_16_reg"
+                            "value": "vector_5_reg"
                         },
                         {
                             "type": "field",
@@ -4092,7 +3977,7 @@
         },
         {
             "name": "vector_add_17_act",
-            "id": 54,
+            "id": 53,
             "runtime_data": [],
             "primitives": [
                 {
@@ -4163,58 +4048,8 @@
             ]
         },
         {
-            "name": "vector_read_10_act",
-            "id": 55,
-            "runtime_data": [],
-            "primitives": [
-                {
-                    "op": "register_read",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector",
-                                "vector_10"
-                            ]
-                        },
-                        {
-                            "type": "register_array",
-                            "value": "vector_10_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "register_write",
-                    "parameters": [
-                        {
-                            "type": "register_array",
-                            "value": "vector_10_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        },
-                        {
-                            "type": "hexstr",
-                            "value": "0x0"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "vector_add_30_act",
-            "id": 56,
+            "name": "vector_add_26_act",
+            "id": 54,
             "runtime_data": [],
             "primitives": [
                 {
@@ -4224,12 +4059,12 @@
                             "type": "field",
                             "value": [
                                 "sml_vector_meta",
-                                "meta_vector_30"
+                                "meta_vector_26"
                             ]
                         },
                         {
                             "type": "register_array",
-                            "value": "vector_30_reg"
+                            "value": "vector_26_reg"
                         },
                         {
                             "type": "field",
@@ -4247,14 +4082,14 @@
                             "type": "field",
                             "value": [
                                 "sml_vector_meta",
-                                "meta_vector_30"
+                                "meta_vector_26"
                             ]
                         },
                         {
                             "type": "field",
                             "value": [
                                 "sml_vector",
-                                "vector_30"
+                                "vector_26"
                             ]
                         }
                     ]
@@ -4264,7 +4099,7 @@
                     "parameters": [
                         {
                             "type": "register_array",
-                            "value": "vector_30_reg"
+                            "value": "vector_26_reg"
                         },
                         {
                             "type": "field",
@@ -4277,8 +4112,108 @@
                             "type": "field",
                             "value": [
                                 "sml_vector_meta",
-                                "meta_vector_30"
+                                "meta_vector_26"
                             ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "vector_read_15_act",
+            "id": 55,
+            "runtime_data": [],
+            "primitives": [
+                {
+                    "op": "register_read",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector",
+                                "vector_15"
+                            ]
+                        },
+                        {
+                            "type": "register_array",
+                            "value": "vector_15_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "op": "register_write",
+                    "parameters": [
+                        {
+                            "type": "register_array",
+                            "value": "vector_15_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        },
+                        {
+                            "type": "hexstr",
+                            "value": "0x0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "vector_read_23_act",
+            "id": 56,
+            "runtime_data": [],
+            "primitives": [
+                {
+                    "op": "register_read",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector",
+                                "vector_23"
+                            ]
+                        },
+                        {
+                            "type": "register_array",
+                            "value": "vector_23_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "op": "register_write",
+                    "parameters": [
+                        {
+                            "type": "register_array",
+                            "value": "vector_23_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        },
+                        {
+                            "type": "hexstr",
+                            "value": "0x0"
                         }
                     ]
                 }
@@ -4357,7 +4292,7 @@
             ]
         },
         {
-            "name": "vector_add_28_act",
+            "name": "vector_read_27_act",
             "id": 58,
             "runtime_data": [],
             "primitives": [
@@ -4367,85 +4302,13 @@
                         {
                             "type": "field",
                             "value": [
-                                "sml_vector_meta",
-                                "meta_vector_28"
-                            ]
-                        },
-                        {
-                            "type": "register_array",
-                            "value": "vector_28_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "add_to_field",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector_meta",
-                                "meta_vector_28"
-                            ]
-                        },
-                        {
-                            "type": "field",
-                            "value": [
                                 "sml_vector",
-                                "vector_28"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "register_write",
-                    "parameters": [
-                        {
-                            "type": "register_array",
-                            "value": "vector_28_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector_meta",
-                                "meta_vector_28"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "vector_read_7_act",
-            "id": 59,
-            "runtime_data": [],
-            "primitives": [
-                {
-                    "op": "register_read",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector",
-                                "vector_7"
+                                "vector_27"
                             ]
                         },
                         {
                             "type": "register_array",
-                            "value": "vector_7_reg"
+                            "value": "vector_27_reg"
                         },
                         {
                             "type": "field",
@@ -4461,7 +4324,7 @@
                     "parameters": [
                         {
                             "type": "register_array",
-                            "value": "vector_7_reg"
+                            "value": "vector_27_reg"
                         },
                         {
                             "type": "field",
@@ -4480,7 +4343,7 @@
         },
         {
             "name": "count_add_act",
-            "id": 60,
+            "id": 59,
             "runtime_data": [],
             "primitives": [
                 {
@@ -4548,108 +4411,8 @@
             ]
         },
         {
-            "name": "vector_read_17_act",
-            "id": 61,
-            "runtime_data": [],
-            "primitives": [
-                {
-                    "op": "register_read",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector",
-                                "vector_17"
-                            ]
-                        },
-                        {
-                            "type": "register_array",
-                            "value": "vector_17_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "register_write",
-                    "parameters": [
-                        {
-                            "type": "register_array",
-                            "value": "vector_17_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        },
-                        {
-                            "type": "hexstr",
-                            "value": "0x0"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "vector_read_26_act",
-            "id": 62,
-            "runtime_data": [],
-            "primitives": [
-                {
-                    "op": "register_read",
-                    "parameters": [
-                        {
-                            "type": "field",
-                            "value": [
-                                "sml_vector",
-                                "vector_26"
-                            ]
-                        },
-                        {
-                            "type": "register_array",
-                            "value": "vector_26_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "op": "register_write",
-                    "parameters": [
-                        {
-                            "type": "register_array",
-                            "value": "vector_26_reg"
-                        },
-                        {
-                            "type": "field",
-                            "value": [
-                                "location",
-                                "index"
-                            ]
-                        },
-                        {
-                            "type": "hexstr",
-                            "value": "0x0"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "name": "vector_add_19_act",
-            "id": 63,
+            "id": 60,
             "runtime_data": [],
             "primitives": [
                 {
@@ -4720,8 +4483,8 @@
             ]
         },
         {
-            "name": "vector_read_29_act",
-            "id": 64,
+            "name": "vector_add_29_act",
+            "id": 61,
             "runtime_data": [],
             "primitives": [
                 {
@@ -4730,8 +4493,8 @@
                         {
                             "type": "field",
                             "value": [
-                                "sml_vector",
-                                "vector_29"
+                                "sml_vector_meta",
+                                "meta_vector_29"
                             ]
                         },
                         {
@@ -4743,6 +4506,25 @@
                             "value": [
                                 "location",
                                 "index"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "op": "add_to_field",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector_meta",
+                                "meta_vector_29"
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector",
+                                "vector_29"
                             ]
                         }
                     ]
@@ -4762,8 +4544,11 @@
                             ]
                         },
                         {
-                            "type": "hexstr",
-                            "value": "0x0"
+                            "type": "field",
+                            "value": [
+                                "sml_vector_meta",
+                                "meta_vector_29"
+                            ]
                         }
                     ]
                 }
@@ -4771,7 +4556,7 @@
         },
         {
             "name": "vector_read_4_act",
-            "id": 65,
+            "id": 62,
             "runtime_data": [],
             "primitives": [
                 {
@@ -4820,8 +4605,8 @@
             ]
         },
         {
-            "name": "vector_read_1_act",
-            "id": 66,
+            "name": "vector_read_22_act",
+            "id": 63,
             "runtime_data": [],
             "primitives": [
                 {
@@ -4831,12 +4616,12 @@
                             "type": "field",
                             "value": [
                                 "sml_vector",
-                                "vector_1"
+                                "vector_22"
                             ]
                         },
                         {
                             "type": "register_array",
-                            "value": "vector_1_reg"
+                            "value": "vector_22_reg"
                         },
                         {
                             "type": "field",
@@ -4852,7 +4637,7 @@
                     "parameters": [
                         {
                             "type": "register_array",
-                            "value": "vector_1_reg"
+                            "value": "vector_22_reg"
                         },
                         {
                             "type": "field",
@@ -4871,7 +4656,7 @@
         },
         {
             "name": "vector_add_20_act",
-            "id": 67,
+            "id": 64,
             "runtime_data": [],
             "primitives": [
                 {
@@ -4942,19 +4727,158 @@
             ]
         },
         {
-            "name": "drop_packet_act",
-            "id": 68,
+            "name": "vector_read_2_act",
+            "id": 65,
             "runtime_data": [],
             "primitives": [
                 {
-                    "op": "drop",
-                    "parameters": []
+                    "op": "register_read",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector",
+                                "vector_2"
+                            ]
+                        },
+                        {
+                            "type": "register_array",
+                            "value": "vector_2_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "op": "register_write",
+                    "parameters": [
+                        {
+                            "type": "register_array",
+                            "value": "vector_2_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        },
+                        {
+                            "type": "hexstr",
+                            "value": "0x0"
+                        }
+                    ]
                 }
             ]
         },
         {
-            "name": "vector_add_23_act",
-            "id": 69,
+            "name": "vector_read_6_act",
+            "id": 66,
+            "runtime_data": [],
+            "primitives": [
+                {
+                    "op": "register_read",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector",
+                                "vector_6"
+                            ]
+                        },
+                        {
+                            "type": "register_array",
+                            "value": "vector_6_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "op": "register_write",
+                    "parameters": [
+                        {
+                            "type": "register_array",
+                            "value": "vector_6_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        },
+                        {
+                            "type": "hexstr",
+                            "value": "0x0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "vector_read_1_act",
+            "id": 67,
+            "runtime_data": [],
+            "primitives": [
+                {
+                    "op": "register_read",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector",
+                                "vector_1"
+                            ]
+                        },
+                        {
+                            "type": "register_array",
+                            "value": "vector_1_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "op": "register_write",
+                    "parameters": [
+                        {
+                            "type": "register_array",
+                            "value": "vector_1_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        },
+                        {
+                            "type": "hexstr",
+                            "value": "0x0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "vector_add_21_act",
+            "id": 68,
             "runtime_data": [],
             "primitives": [
                 {
@@ -4964,12 +4888,12 @@
                             "type": "field",
                             "value": [
                                 "sml_vector_meta",
-                                "meta_vector_23"
+                                "meta_vector_21"
                             ]
                         },
                         {
                             "type": "register_array",
-                            "value": "vector_23_reg"
+                            "value": "vector_21_reg"
                         },
                         {
                             "type": "field",
@@ -4987,14 +4911,14 @@
                             "type": "field",
                             "value": [
                                 "sml_vector_meta",
-                                "meta_vector_23"
+                                "meta_vector_21"
                             ]
                         },
                         {
                             "type": "field",
                             "value": [
                                 "sml_vector",
-                                "vector_23"
+                                "vector_21"
                             ]
                         }
                     ]
@@ -5004,7 +4928,7 @@
                     "parameters": [
                         {
                             "type": "register_array",
-                            "value": "vector_23_reg"
+                            "value": "vector_21_reg"
                         },
                         {
                             "type": "field",
@@ -5017,7 +4941,79 @@
                             "type": "field",
                             "value": [
                                 "sml_vector_meta",
-                                "meta_vector_23"
+                                "meta_vector_21"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "vector_add_24_act",
+            "id": 69,
+            "runtime_data": [],
+            "primitives": [
+                {
+                    "op": "register_read",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector_meta",
+                                "meta_vector_24"
+                            ]
+                        },
+                        {
+                            "type": "register_array",
+                            "value": "vector_24_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "op": "add_to_field",
+                    "parameters": [
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector_meta",
+                                "meta_vector_24"
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector",
+                                "vector_24"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "op": "register_write",
+                    "parameters": [
+                        {
+                            "type": "register_array",
+                            "value": "vector_24_reg"
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "location",
+                                "index"
+                            ]
+                        },
+                        {
+                            "type": "field",
+                            "value": [
+                                "sml_vector_meta",
+                                "meta_vector_24"
                             ]
                         }
                     ]
@@ -6804,19 +6800,15 @@
         ],
         [
             "intrinsic_metadata",
-            "ingress_global_timestamp"
-        ],
-        [
-            "intrinsic_metadata",
-            "lf_field_list"
-        ],
-        [
-            "intrinsic_metadata",
             "mcast_grp"
         ],
         [
             "intrinsic_metadata",
             "egress_rid"
+        ],
+        [
+            "intrinsic_metadata",
+            "mcast_hash"
         ]
     ]
 }

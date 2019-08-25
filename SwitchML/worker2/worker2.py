@@ -34,6 +34,7 @@ sent_data = sent_data.split()
 sent_data = list(map(float, sent_data))  # 把数据转换成浮点数
 # p.off=0
 # 发送数据
+t1=time.time()
 for i in range(0, s):
     p.idx = i
     p.off = k * i
@@ -47,7 +48,7 @@ for i in range(0, s):
             sent_packet += struct.pack("i", sent_vector[ii])
         print(sent_packet)
         ss.sendto(sent_packet, sent_addr)
-        time.sleep(0.1)
+        time.sleep(0.01)
         # print(vector)
     else:
         idx_field = struct.pack(">i", p.idx)
@@ -65,6 +66,7 @@ while True:
     # 接收数据
     recv_packet,recv_addr=ss.recvfrom(1024)
     counter=counter+1
+    #print("counter:",counter)
     recv_data=[]
     p.idx=int(struct.unpack(">i",recv_packet[0:4])[0])
     for d in range(4,len(recv_packet),4):
@@ -78,13 +80,13 @@ while True:
         recv_vector[i]=float(recv_vector[i]/(2**28))
         # f2.write(str(recv_vector[i])+' ')
     print(recv_vector)
-    print(len(sent_data))
+    #print(len(sent_data))
     sent_data[p.off:p.off+k]=recv_vector
     p.off += k*s
-    time.sleep(0.1)
+    time.sleep(0.01)
     if p.off<len(sent_data) and p.off+k <= len(sent_data):
         sent_vector = sent_data[p.off:p.off + k]
-        idx_field = struct.pack("i", p.idx)
+        idx_field = struct.pack(">i", p.idx)
         off_field = struct.pack("i", p.off)
         sent_packet = idx_field + off_field
         for ii in range(len(sent_vector)):
@@ -93,9 +95,9 @@ while True:
         print("sent again:")
         print(sent_packet)
         ss.sendto(sent_packet, sent_addr)
-        time.sleep(0.1)
+        time.sleep(0.01)
     elif p.off<len(sent_data) and p.off+k > len(sent_data):
-        idx_field = struct.pack("i", p.idx)
+        idx_field = struct.pack(">i", p.idx)
         off_field = struct.pack("i", p.off)
         sent_packet = idx_field + off_field
         sent_vector = sent_data[p.off:]
@@ -103,11 +105,12 @@ while True:
             sent_vector[iii] = int(sent_vector[iii] * 2 ** 28)
             sent_packet += struct.pack("i", sent_vector[iii])
         ss.sendto(sent_packet, sent_addr)
-    print(counter)
     if counter == len(sent_data)/k:
+    #if counter == math.ceil(len(sent_data)/k) or p.off==131040:
         print("done!")
         break
-
+t2=time.time()
+print("t2-t1:",t2-t1-81.92)
 for list_men in sent_data:
     # off=0
     # for i in range(k):
