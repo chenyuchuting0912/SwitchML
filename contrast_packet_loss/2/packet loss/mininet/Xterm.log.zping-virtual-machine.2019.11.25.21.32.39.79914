@@ -1,0 +1,11 @@
+^CException ignored in: <module 'threading' from '/usr/lib/python3.5/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/threading.py", line 1288, in _shutdown
+    t.join()
+  File "/usr/lib/python3.5/threading.py", line 1054, in join
+    self._wait_for_tstate_lock()
+  File "/usr/lib/python3.5/threading.py", line 1070, in _wait_for_tstate_lock
+    elif lock.acquire(block, timeout):
+KeyboardInterrupt
+root@zping-virtual-machine:~/NetCache/worker1# ^C
+root@zping-virtual-machine:~/NetCache/worker1# 
